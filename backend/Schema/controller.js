@@ -21,7 +21,7 @@ router.post('/initialize', async (req, res) => {
                 'Content-Type': 'application/json'
             }
         });
-        console.log('Paystack response:', response.data);
+        // console.log('Paystack response:', response.data);
         const transaction = new Transaction({
             reference: response.data.data.reference,
             amount: amount,

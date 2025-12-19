@@ -10,7 +10,7 @@ router.post(
   '/paystack/webhook',
  express.raw({ type: 'application/json' }),
   (req, res) => {
-    console.log('Webhook received');
+    // console.log('Webhook received');
 
     // ✅ 1. Verify Paystack signature
     const secret = process.env.PAYSTACK_API_KEY;
@@ -29,7 +29,7 @@ router.post(
     // ✅ 2. Parse the raw body AFTER verification
     const event = JSON.parse(req.body.toString());
 
-    console.log('Event:', event.event);
+    // console.log('Event:', event.event);
 
     // ✅ 3. Handle event
     if (event.event === 'charge.success') {

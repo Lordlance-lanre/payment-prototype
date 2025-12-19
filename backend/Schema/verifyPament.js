@@ -9,7 +9,7 @@ const router = express.Router();
 router.get('/verify/:reference', async (req, res) => {
     const { reference } = req.params;
 
-    console.log(`Verifying payment for reference: ${reference}`);
+    // console.log(`Verifying payment for reference: ${reference}`);
 
     try {
         const response = await axios.get(`${process.env.PAYSTACK_VERIFY_URL}${reference}`, {

@@ -20,15 +20,15 @@ const InitializePayment = () => {
                 },
                 body: JSON.stringify({ email, amount: parseFloat(amount) }),
             })
-            console.log('Response status>>', response);
+            // console.log('Response status>>', response);
 
             const data = await response.json()
 
-            console.log('Response data>>', data);
+            // console.log('Response data>>', data);
             if (response.ok) {
                 setMessage('Payment initialized successfully!')
-                window.location.href = data.data.authorization_url
-                // Optionally redirect to Paystack payment page: window.location.href = data.data.authorization_url
+                window.location.href = data.data.authorization_url;
+               
             } else {
                 setMessage(data.error || 'Failed to initialize payment')
             }
